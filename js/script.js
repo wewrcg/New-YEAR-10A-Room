@@ -41,7 +41,7 @@ objectsData.forEach((item) => {
 function openFocus(btn, item) {
   sidebarTitle.textContent = item.title;
   sidebarText.textContent = item.desc;
-  sidebarImg.src = 'images/main-image.png';
+  sidebarImg.src = 'images/main-image.webp';
   sidebarImg.style.transformOrigin = `${item.left}% ${item.top}%`;
 
   btn.classList.add('active');
