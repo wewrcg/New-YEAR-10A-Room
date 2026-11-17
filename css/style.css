@@ -9,6 +9,10 @@ body {
   text-align: center;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 .header {
   background: #e0e0e0;
   padding: 20px;
@@ -122,11 +126,11 @@ h1 {
 .sidebar-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  /* Увеличиваем картинку в 3.5 раза, чтобы приблизить нужный объект */
-  transform: scale(3.5); 
+  object-fit: cover; /* Заполняет всё окошко без серых полос по бокам */
+  transform: scale(3.5);
   transition: transform-origin 0.2s ease;
 }
+
 
 
 .sidebar-desc {
