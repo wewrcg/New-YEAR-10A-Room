@@ -126,10 +126,9 @@ h1 {
 .sidebar-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Заполняет всё окошко без серых полос по бокам */
-  transform: scale(3.5);
-  transition: transform-origin 0.2s ease;
+  object-fit: contain; /* Покажет картинку объекта целиком, не обрезая края */
 }
+
 
 
 
