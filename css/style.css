@@ -7,6 +7,7 @@
 body {
   font-family: sans-serif;
   text-align: center;
+  background: #0f172a url('../images/snow.gif') center/cover fixed no-repeat;
 }
 
 body.no-scroll {
@@ -14,13 +15,25 @@ body.no-scroll {
 }
 
 .header {
-  background: #e0e0e0;
+  width: 100%;
+  min-height: 140px; /* Увеличиваем высоту шапки */
+  background: rgba(25, 35, 50, 0.85); /* Полупрозрачный тёмный фон */
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: bold;
+  
+  /* Центрируем содержимое шапки по вертикали и горизонтали */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  font-size: 24px;
 }
 
+
 h1 {
-  margin: 20px 0;
+  margin: 30px 0;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 /* Контейнер подстраивается под ширину картинки и стоит по центру */
@@ -153,8 +166,8 @@ h1 {
 
 .new-year-section {
   width: 100%;
-  min-height: 300px; /* Делает блок высоким и массивным */
-  background: #d3d3d3;
+  min-height: 300px;
+  background: rgba(211, 211, 211, 0.9); /* Слегка просвечивает фон */
   padding: 60px 20px;
   margin-top: 60px;
   display: flex;
