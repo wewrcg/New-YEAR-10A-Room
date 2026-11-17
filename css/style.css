@@ -9,7 +9,7 @@ body {
   text-align: center;
   
   /* Укажите здесь точное имя и расширение вашего фонового файла из папки images */
-  background: #0f172a url('../images/bg.jpg') center/cover fixed no-repeat;
+  background: #0f172a url('../images/bg.webp') center/cover fixed no-repeat;
 }
 
 
