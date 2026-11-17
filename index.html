@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новогодняя комната 10А</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Новогодняя комната 10 «А»</h1>
+        <p>Нажимай на огоньки, чтобы узнать историю каждого предмета</p>
+    </header>
+
+    <!-- Квадратное окно 1:1 -->
+    <main class="room-container">
+        <img src="images/room.jpg" alt="Новогодняя комната" class="room-image">
+
+        <!-- Пример первой кнопки -->
+        <button class="hotspot" style="top: 50%; left: 50%;" 
+                data-title="Ёлка класса" 
+                data-author="Общий вклад" 
+                data-desc="Главная красавица нашей новогодней комнаты.">
+            ✦
+        </button>
+    </main>
+
+    <!-- Всплывающее окно с описанием -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-btn" class="close-btn">&times;</span>
+            <h2 id="modal-title">Название</h2>
+            <p id="modal-author" class="author">Автор</p>
+            <p id="modal-desc">Описание...</p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

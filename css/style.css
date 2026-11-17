@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b1120;
+    color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    color: #fbbf24;
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.header p {
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+/* Квадратное окно комнаты 1:1 */
+.room-container {
+    position: relative;
+    width: 100%;
+    max-width: 650px; /* Максимальный размер квадрата на ПК */
+    aspect-ratio: 1 / 1; /* Жесткое соотношение сторон 1:1 */
+    background-color: #1e293b; /* Фон, пока не загружена картинка */
+    border: 3px solid #fbbf24; /* Золотая рамка */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+.room-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заполняет квадрат без искажения пропорций */
+    display: block;
+}
+
+/* Светящиеся кнопки */
+.hotspot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #fbbf24;
+    color: #0b1120;
+    border: 2px solid #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px #fbbf24;
+    animation: pulse 2s infinite;
+    transition: transform 0.2s;
+}
+
+.hotspot:hover {
+    transform: translate(-50%, -50%) scale(1.25);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.8); }
+    70% { box-shadow: 0 0 0 14px rgba(251, 191, 36, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
+}
+
+/* Всплывающее окно */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #1e293b;
+    padding: 25px;
+    border-radius: 14px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    border: 2px solid #fbbf24;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #94a3b8;
+}
+
+.close-btn:hover {
+    color: #ffffff;
+}
+
+#modal-title {
+    color: #fbbf24;
+    margin-bottom: 5px;
+}
+
+.author {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
