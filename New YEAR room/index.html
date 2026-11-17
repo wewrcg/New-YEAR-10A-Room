@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новогодняя комната 10А</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Новогодняя комната 10 «А»</h1>
+        <p>Нажимай на светящиеся огоньки, чтобы узнать историю каждого предмета</p>
+    </header>
+
+    <main class="room-container">
+        <!-- Картинка твоей комнаты -->
+        <img src="images/room.jpg" alt="Новогодняя комната" class="room-image">
+
+        <!-- Кнопка 1: координаты задаются в процентах (top - сверху, left - слева) -->
+        <button class="hotspot" style="top: 45%; left: 30%;" 
+                data-title="Мандарины от Саши" 
+                data-author="Автор: Саша И." 
+                data-desc="Без этих мандаринов Новый год просто не наступит! Принес целый пакет для всего класса.">
+            ✦
+        </button>
+
+        <!-- Кнопка 2 -->
+        <button class="hotspot" style="top: 60%; left: 70%;" 
+                data-title="Старая гирлянда" 
+                data-author="Автор: Маша К." 
+                data-desc="Эта гирлянда светит уже 10 лет и создает самый уютный ламповый свет.">
+            ✦
+        </button>
+    </main>
+
+    <!-- Всплывающее окно (изначально скрыто) -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-btn" class="close-btn">&times;</span>
+            <h2 id="modal-title">Название предмета</h2>
+            <p id="modal-author" class="author">Автор</p>
+            <p id="modal-desc">Описание предмета...</p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
