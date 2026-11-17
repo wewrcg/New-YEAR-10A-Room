@@ -7,8 +7,11 @@
 body {
   font-family: sans-serif;
   text-align: center;
-  background: #0f172a url('../images/snow.gif') center/cover fixed no-repeat;
+  
+  /* Укажите здесь точное имя и расширение вашего фонового файла из папки images */
+  background: #0f172a url('../images/bg.jpg') center/cover fixed no-repeat;
 }
+
 
 body.no-scroll {
   overflow: hidden;
