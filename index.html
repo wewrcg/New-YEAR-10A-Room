@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Интерактивная карта объекта</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">Шапка</header>
+  
+  <main class="container">
+    <h1>Заголовок</h1>
+    
+    <!-- Контейнер с основной картинкой -->
+    <div class="scene">
+      <img src="images/main-image.png" alt="Центральное изображение" class="main-img">
+      <button class="target-object" id="objectBtn" aria-label="Открыть описание"></button>
+    </div>
+  </main>
+
+  <!-- ВСТАВЛЯТЬ ВОТ СЮДА (после </main>) -->
+  <section class="new-year-section">
+    <h2>до Нового Года:</h2>
+    <div class="timer" id="countdown">00д 00ч 00м 00с</div>
+  </section>
+
+  <!-- Слой затемнения фона (остается ниже) -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Выезжающая вкладка справа -->
+  <aside class="sidebar" id="sidebar">
+    <button class="close-btn" id="closeBtn">✕</button>
+    <div class="sidebar-image">
+      <img src="images/small-obj.png" alt="Маленькое изображение объекта">
+    </div>
+    <div class="sidebar-desc">
+      <h3>Название объекта</h3>
+      <p>Подробное описание объекта, которое появляется при клике.</p>
+    </div>
+  </aside>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
