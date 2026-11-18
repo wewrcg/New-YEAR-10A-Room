@@ -10,8 +10,9 @@ const sidebarText = document.getElementById('sidebarText');
 const objectsData = [
   { top: 43, left: 12, title: 'Flying V', desc: 'Белая гитара.', img: ' '},
   { top: 40, left: 28, title: 'Картина / Экран', desc: 'Волк из «Ну, погоди!» на пляже.', img: ' ' },
-  { top: 75, left: 10, title: 'Лоток', desc: 'Стоит в левом углу на полу.', img: ' ' },
-  { top: 73, left: 10, title: 'Паяльник', desc: 'лежит нафиг.', img: ' ' },
+  { top: 75, left: 13, title: 'Лоток', desc: 'Стоит в левом углу на полу.', img: ' ' },
+  { top: 73, left: 12, title: 'Паяльник', desc: 'лежит нафиг.', img: ' ' },
+  { top: 74, left: 9, title: 'Трещина', desc: 'трещина на полу.', img: ' ' },
   { top: 60, left: 23, title: 'Белый мишка', desc: 'Игрушка в новогодней шапочке.', img: ' ' },
   { top: 75, left: 38, title: 'Боксёрская груша', desc: 'Напольная груша на стойке.', img: ' ' },
   { top: 42, left: 50, title: 'Новогодняя ёлка', desc: 'Зелёная ёлка в центре комнаты.', img: ' ' },
