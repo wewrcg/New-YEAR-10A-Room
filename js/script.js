@@ -8,21 +8,23 @@ const sidebarTitle = document.getElementById('sidebarTitle');
 const sidebarText = document.getElementById('sidebarText');
 
 const objectsData = [
-  { top: 43, left: 12, title: 'Flying V', desc: 'Белая гитара.', img: ' '},
+  { top: 43, left: 10,5, title: 'Flying V', desc: 'Белая гитара.', img: ' '},
   { top: 43, left: 23, title: 'ТВ', desc: 'ШО откуда тут связь', img: ' ' },
-  { top: 75, left: 13, title: 'Лоток', desc: 'Стоит в левом углу на полу.', img: ' ' },
+  { top: 75, left: 15, title: 'Лоток', desc: 'Стоит в левом углу на полу.', img: ' ' },
   { top: 73, left: 12, title: 'Паяльник', desc: 'лежит нафиг.', img: ' ' },
-  { top: 74, left: 9, title: 'Трещина', desc: 'трещина на полу.', img: ' ' },
+  { top: 76, left: 9, title: 'Трещина', desc: 'трещина на полу.', img: ' ' },
   { top: 58, left: 21, title: 'Белый мишка', desc: 'Игрушка в новогодней шапочке.', img: ' ' },
-  { top: 85, left: 36, title: 'Боксёрская груша', desc: 'Напольная груша на стойке.', img: ' ' },
+  { top: 80, left: 37, title: 'Боксёрская груша', desc: 'Напольная груша на стойке.', img: ' ' },
   { top: 42, left: 50, title: 'Новогодняя ёлка', desc: 'Зелёная ёлка в центре комнаты.', img: ' ' },
   { top: 95, left: 50, title: 'ПК', desc: 'А где играть?.', img: ' ' },
-  { top: 32, left: 66, title: 'Банка на полке', desc: 'Энергетик на зигзагообразной полке.', img: ' ' },
-  { top: 36, left: 78, title: 'Портрет Ёжика', desc: 'Картина с Ёжиком на правой стене.', img: ' ' },
-  { top: 50, left: 95, title: 'башка заяца', desc: 'офигееет.', img: ' ' },
+  { top: 32, left: 66, title: 'Полка Z', desc: 'Россия Путин Победа', img: ' ' },
+  { top: 32, left: 66, title: 'монстр розовый', desc: 'как ты', img: ' ' },
+  { top: 38, left: 80, title: 'Портрет Ёжика', desc: 'Картина с Ёжиком на правой стене.', img: ' ' },
+  { top: 42, left: 95, title: 'башка заяца', desc: 'офигееет.', img: ' ' },
+  { top: 50, left: 95, title: 'бас ульяна', desc: 'шо это гитара.', img: ' ' },
   { top: 52, left: 63, title: 'Подарки', desc: 'Разноцветные кубики за диваном.', img: ' ' },
-  { top: 61, left: 72, title: 'Персонаж на диване', desc: 'Сидит на белом диване.', img: ' ' },
-  { top: 71, left: 67, title: 'Новогодний ковёр', desc: 'Круглый ковёр с ёлочками.', img: ' ' }
+  { top: 56, left: 72, title: 'фурифембой', desc: 'Сидит на белом диване.', img: ' ' },
+  { top: 72, left: 71, title: 'Новогодний ковёр', desc: 'Круглый ковёр с ёлочками.', img: ' ' }
 ];
 
 let activeButton = null;
