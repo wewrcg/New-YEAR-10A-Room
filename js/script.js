@@ -9,11 +9,14 @@ const sidebarText = document.getElementById('sidebarText');
 
 const objectsData = [
   { top: 43, left: 10, title: 'Flying V', desc: 'Белая гитара.', img: ' '},
+  { top: 23, left: 8, title: 'Гирлянда', desc: 'Голубая как я.', img: ' '},
   { top: 43, left: 23, title: 'ТВ', desc: 'ШО откуда тут связь', img: ' ' },
   { top: 75, left: 15, title: 'Лоток', desc: 'Стоит в левом углу на полу.', img: ' ' },
   { top: 73, left: 12, title: 'Паяльник', desc: 'лежит нафиг.', img: ' ' },
   { top: 76, left: 9, title: 'Трещина', desc: 'трещина на полу.', img: ' ' },
   { top: 58, left: 21, title: 'Белый мишка', desc: 'Игрушка в новогодней шапочке.', img: ' ' },
+  { top: 56, left: 16, title: 'Трещинаааа', desc: 'трещина на стене.', img: ' ' },
+  { top: 59, left: 25, title: 'тумбы', desc: 'taph.', img: ' ' },
   { top: 80, left: 37, title: 'Боксёрская груша', desc: 'Напольная груша на стойке.', img: ' ' },
   { top: 42, left: 50, title: 'Новогодняя ёлка', desc: 'Зелёная ёлка в центре комнаты.', img: ' ' },
   { top: 95, left: 50, title: 'ПК', desc: 'А где играть?.', img: ' ' },
