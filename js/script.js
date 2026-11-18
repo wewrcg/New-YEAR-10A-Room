@@ -8,7 +8,7 @@ const sidebarTitle = document.getElementById('sidebarTitle');
 const sidebarText = document.getElementById('sidebarText');
 
 const objectsData = [
-  { top: 43, left: 10,5, title: 'Flying V', desc: 'Белая гитара.', img: ' '},
+  { top: 43, left: 10, title: 'Flying V', desc: 'Белая гитара.', img: ' '},
   { top: 43, left: 23, title: 'ТВ', desc: 'ШО откуда тут связь', img: ' ' },
   { top: 75, left: 15, title: 'Лоток', desc: 'Стоит в левом углу на полу.', img: ' ' },
   { top: 73, left: 12, title: 'Паяльник', desc: 'лежит нафиг.', img: ' ' },
