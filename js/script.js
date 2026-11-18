@@ -9,17 +9,17 @@ const sidebarText = document.getElementById('sidebarText');
 
 const objectsData = [
   { top: 43, left: 12, title: 'Flying V', desc: 'Белая гитара.', img: ' '},
-  { top: 40, left: 28, title: 'Картина / Экран', desc: 'Волк из «Ну, погоди!» на пляже.', img: ' ' },
+  { top: 43, left: 23, title: 'ТВ', desc: 'ШО откуда тут связь', img: ' ' },
   { top: 75, left: 13, title: 'Лоток', desc: 'Стоит в левом углу на полу.', img: ' ' },
   { top: 73, left: 12, title: 'Паяльник', desc: 'лежит нафиг.', img: ' ' },
   { top: 74, left: 9, title: 'Трещина', desc: 'трещина на полу.', img: ' ' },
   { top: 58, left: 21, title: 'Белый мишка', desc: 'Игрушка в новогодней шапочке.', img: ' ' },
   { top: 85, left: 36, title: 'Боксёрская груша', desc: 'Напольная груша на стойке.', img: ' ' },
   { top: 42, left: 50, title: 'Новогодняя ёлка', desc: 'Зелёная ёлка в центре комнаты.', img: ' ' },
-  { top: 100, left: 50, title: 'ПК', desc: 'А где играть?.', img: ' ' },
+  { top: 95, left: 50, title: 'ПК', desc: 'А где играть?.', img: ' ' },
   { top: 32, left: 66, title: 'Банка на полке', desc: 'Энергетик на зигзагообразной полке.', img: ' ' },
   { top: 36, left: 78, title: 'Портрет Ёжика', desc: 'Картина с Ёжиком на правой стене.', img: ' ' },
-  { top: 50, left: 89, title: 'Заяц', desc: 'Декор с Зайцем справа.', img: ' ' },
+  { top: 50, left: 95, title: 'башка заяца', desc: 'офигееет.', img: ' ' },
   { top: 52, left: 63, title: 'Подарки', desc: 'Разноцветные кубики за диваном.', img: ' ' },
   { top: 61, left: 72, title: 'Персонаж на диване', desc: 'Сидит на белом диване.', img: ' ' },
   { top: 71, left: 67, title: 'Новогодний ковёр', desc: 'Круглый ковёр с ёлочками.', img: ' ' }
