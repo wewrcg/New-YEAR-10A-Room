@@ -7,11 +7,9 @@
 body {
   font-family: sans-serif;
   text-align: center;
-  
-  /* Укажите здесь точное имя и расширение вашего фонового файла из папки images */
   background: #0f172a;
+  overflow-x: hidden; /* Запрещает случайный сдвиг страницы вправо на телефоне */
 }
-
 
 body.no-scroll {
   overflow: hidden;
@@ -19,19 +17,16 @@ body.no-scroll {
 
 .header {
   width: 100%;
-  min-height: 140px; /* Увеличиваем высоту шапки */
-  background: rgba(25, 35, 50, 0.85); /* Полупрозрачный тёмный фон */
+  min-height: 140px;
+  background: rgba(25, 35, 50, 0.85);
   color: #ffffff;
   font-size: 32px;
   font-weight: bold;
-  
-  /* Центрируем содержимое шапки по вертикали и горизонтали */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
 }
-
 
 h1 {
   margin: 30px 0;
@@ -39,32 +34,91 @@ h1 {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-/* Контейнер подстраивается под ширину картинки и стоит по центру */
-.scene {
-  position: relative;
-  display: inline-block; /* Сжимает контейнер ровно по размеру картинки */
-  max-width: 800px;      /* Максимальная ширина на больших экранах */
-  width: 90%;            /* Адаптивность для узких экранов */
+/* =========================================
+   ЦЕНТРАЛЬНАЯ КОМНАТА И БОКОВЫЕ ЭЛЕМЕНТЫ
+   ========================================= */
+
+/* Сетка из 3 колонок для ПК: комната всегда строго по центру */
+.scene-wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 35px;
+  max-width: 1550px;
+  width: 96%;
   margin: 0 auto;
 }
 
-/* Сама центральная картинка */
+/* Левый блок с картинкой-информацией */
+.info-box {
+  justify-self: end;       /* Прижимает блок ближе к комнате */
+  height: 520px;           /* Высота чуть меньше центральной комнаты */
+  width: auto;             /* Ширина подстраивается под пропорции картинки */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+.info-box img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+/* Контейнер центральной комнаты */
+.scene {
+  position: relative;
+  display: inline-block;
+  max-width: 720px;
+  width: 100%;
+  margin: 0;
+}
+
 .main-img {
-  display: block;        /* Убирает лишний отступ снизу под картинкой */
+  display: block;
   width: 100%;
   height: auto;
 }
 
-/* Кнопка поверх объекта (координаты задаются в процентах!) */
+/* Правый блок с венком */
+.right-controls {
+  justify-self: start;     /* Прижимает венок ближе к комнате */
+  display: flex;
+  align-items: center;
+}
+
+.scene-switch-btn {
+  width: 180px;            /* Размер венка на ПК */
+  height: auto;
+  cursor: pointer;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.scene-switch-btn:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.scene-switch-btn.active {
+  filter: drop-shadow(0 0 15px rgba(255, 220, 100, 0.9));
+  transform: rotate(-10deg);
+}
+
+/* =========================================
+   ИНТЕРАКТИВНЫЕ ТОЧКИ И САЙДБАР
+   ========================================= */
+
 .target-object {
   position: absolute;
   z-index: 5;
-  width: 18px;               /* Небольшой аккуратный размер */
+  width: 18px;
   height: 18px;
   transform: translate(-50%, -50%);
-  
-  background: #ff2a2a;       /* Яркий красный центр */
-  border: 2px solid #ffffff; /* Контрастная белая рамка */
+  background: #ff2a2a;
+  border: 2px solid #ffffff;
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
   cursor: pointer;
@@ -72,13 +126,11 @@ h1 {
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-/* Легкое увеличение при наведении мышки */
 .target-object:hover {
   transform: translate(-50%, -50%) scale(1.35);
   background: #ff5555;
 }
 
-/* Выделение выбранной кнопки поверх темного экрана */
 .target-object.active {
   z-index: 20;
   background: #ffffff;
@@ -87,9 +139,6 @@ h1 {
   transform: translate(-50%, -50%) scale(1.4);
 }
 
-
-
-/* Затемнение всего экрана */
 .overlay {
   position: fixed;
   top: 0;
@@ -99,7 +148,7 @@ h1 {
   background: rgba(0, 0, 0, 0.65);
   z-index: 10;
   opacity: 0;
-  pointer-events: none; /* Пропускает клики, когда скрыто */
+  pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
@@ -108,7 +157,6 @@ h1 {
   pointer-events: auto;
 }
 
-/* Боковая вкладка справа */
 .sidebar {
   position: fixed;
   top: 15%;
@@ -117,14 +165,11 @@ h1 {
   background: #ffffff;
   padding: 20px;
   z-index: 30;
-  box-shadow: -5px 0 15px rgba(0,0,0,0.3);
-  
-  /* Прячем вкладку за правый край экрана */
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
   transform: translateX(100%);
   transition: transform 0.3s ease;
 }
 
-/* Выдвигаем вкладку на экран */
 .sidebar.active {
   transform: translateX(0);
 }
@@ -134,7 +179,7 @@ h1 {
   height: 200px;
   background: #e0e0e0;
   margin-bottom: 15px;
-  overflow: hidden;      /* Обрезает всё, что выходит за рамки окошка */
+  overflow: hidden;
   position: relative;
   border-radius: 8px;
 }
@@ -142,11 +187,8 @@ h1 {
 .sidebar-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Покажет картинку объекта целиком, не обрезая края */
+  object-fit: contain;
 }
-
-
-
 
 .sidebar-desc {
   background: #e0e0e0;
@@ -167,10 +209,14 @@ h1 {
   font-weight: bold;
 }
 
+/* =========================================
+   ТАЙМЕР ДО НОВОГО ГОДА
+   ========================================= */
+
 .new-year-section {
   width: 100%;
   min-height: 300px;
-  background: rgba(211, 211, 211, 0.9); /* Слегка просвечивает фон */
+  background: rgba(211, 211, 211, 0.9);
   padding: 60px 20px;
   margin-top: 60px;
   display: flex;
@@ -191,104 +237,61 @@ h1 {
   letter-spacing: 2px;
 }
 
-/* Сетка из 3 колонок: левая и правая равны, поэтому центр всегда ровно посередине */
-.scene-wrapper {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 30px;
-  max-width: 1400px;
-  width: 95%;
-  margin: 0 auto;
-}
-
-/* Левый квадратный блок с информацией */
-.info-box {
-  justify-self: end;       /* Прижимает блок ближе к комнате */
-  width: 240px;
-  height: 240px;           /* Делает блок квадратным */
-  background: rgba(25, 35, 50, 0.85);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  padding: 20px;
-  color: #ffffff;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-.info-box h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
-  color: #ffd700;
-}
-
-.info-box p {
-  font-size: 14px;
-  line-height: 1.4;
-  color: #e2e8f0;
-}
-
-/* Расширяем общий контейнер, чтобы вместить крупный инфо-блок, комнату и венок */
-.scene-wrapper {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 35px;
-  max-width: 1550px;     /* Даем больше места по бокам */
-  width: 96%;
-  margin: 0 auto;
-}
-
-/* Левый блок подстраивается под форму картинки и чуть ниже комнаты */
-.info-box {
-  justify-self: end;       /* Прижимает блок ближе к комнате */
-  height: 520px;           /* Высота чуть меньше центральной комнаты */
-  width: auto;             /* Ширина подстроится сама под пропорции картинки */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-  background: transparent; /* Убирает лишние пустые поля по бокам */
-}
-
-.info-box img {
-  height: 100%;            /* Картинка занимает всю высоту блока */
-  width: auto;             /* Сохраняет свои родные пропорции без обрезки */
-  display: block;
-}
-
-/* Центральная комната */
-.scene-wrapper .scene {
-  margin: 0;
-  max-width: 720px;        /* Чуть оптимизируем ширину, чтобы всё влезло в один экран */
-  width: 100%;
-}
+/* =========================================
+   АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ И ПЛАНШЕТОВ
+   ========================================= */
 
 @media (max-width: 1100px) {
   .scene-wrapper {
-    grid-template-columns: 1fr;
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
+    width: 100%;
+    padding: 0 15px;
   }
 
+  /* 1. Комната идет первой на всю ширину */
+  .scene-wrapper .scene {
+    order: 1;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  /* 2. Табличка с инфой встает снизу слева */
   .info-box {
-    justify-self: center;
-    height: auto;
+    order: 2;
+    height: 180px;
     width: auto;
-    max-width: 320px;
   }
 
   .info-box img {
-    width: 100%;
+    height: 100%;
+    width: auto;
+  }
+
+  /* 3. Венок встает снизу справа рядом с табличкой */
+  .right-controls {
+    order: 3;
+  }
+
+  .scene-switch-btn {
+    width: 120px;
     height: auto;
   }
 
-  .right-controls {
-    justify-self: center;
+  /* Уменьшаем шрифт таймера, чтобы не вылезал за экран телефона */
+  .new-year-section h2 {
+    font-size: 28px;
+  }
+
+  .timer {
+    font-size: 34px;
   }
 }
+
+
 
 
 
