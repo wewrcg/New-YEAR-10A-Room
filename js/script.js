@@ -23,8 +23,8 @@ const objectsData = [
   { top: 42, left: 45, title: 'Новогодняя ёлка', desc: 'В лесу родилась ёлочка а кто её родил.', img: '12.png' },
   { top: 42, left: 55, title: 'Украшения', desc: 'Крутые украшения всякие', img: '13.png' },
   { top: 76, left: 23, title: 'ПК', desc: 'А где играть?.', img: '21.png' },
-  { top: 20, left: 60, title: 'Снеговик', desc: 'А он не растает?', img: '11.png' },
-  { top: 30, left: 66, title: 'Полка Z', desc: 'Россия Путин Победа', img: '10.png' },
+  { top: 20, left: 60, title: 'Снеговик', desc: 'А он не растает?', img: '10.png' },
+  { top: 30, left: 66, title: 'Полка Z', desc: 'Россия Путин Победа', img: '11.png' },
   { top: 35, left: 68, title: 'Розовый монстр', desc: 'Как ты', img: '9.png' },
   { top: 38, left: 84, title: 'Портрет Ёжика', desc: 'Картина с Ёжиком на правой стене.', img: '2.png' },
   { top: 42, left: 95, title: 'Голова зайца', desc: 'офигееет.', img: '1.png' },
@@ -60,7 +60,13 @@ objectsData.forEach((item) => {
 function openFocus(btn, item) {
   sidebarTitle.textContent = item.title;
   sidebarText.textContent = item.desc;
-  sidebarImg.src = 'images/' + item.img; // Важно: именно item.img!
+
+  // Прячем картинку, пока новая не прогрузится (чтобы не мелькала старая)
+  sidebarImg.style.opacity = '0';
+  sidebarImg.onload = () => {
+    sidebarImg.style.opacity = '1';
+  };
+  sidebarImg.src = 'images/' + item.img;
 
   btn.classList.add('active');
   activeButton = btn;
@@ -70,8 +76,6 @@ function openFocus(btn, item) {
   document.body.classList.add('no-scroll');
 }
 
-
-
 function closeFocus() {
   if (activeButton) {
     activeButton.classList.remove('active');
@@ -80,7 +84,13 @@ function closeFocus() {
   overlay.classList.remove('active');
   sidebar.classList.remove('active');
   document.body.classList.remove('no-scroll');
+
+  // Сбрасываем картинку после того, как сайдбар уехал за экран (через 300 мс)
+  setTimeout(() => {
+    sidebarImg.src = '';
+  }, 300);
 }
+
 
 overlay.addEventListener('click', closeFocus);
 closeBtn.addEventListener('click', closeFocus);
@@ -135,5 +145,14 @@ if (switchSceneBtn && mainImage) {
     }
   });
 }
+
+// Предзагрузка всех картинок объектов в кэш браузера
+window.addEventListener('load', () => {
+  objectsData.forEach((item) => {
+    const preloadImg = new Image();
+    preloadImg.src = 'images/' + item.img;
+  });
+});
+
 
 
