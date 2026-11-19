@@ -293,7 +293,7 @@ h1 {
   }
   
   .target-object {
+    width: 12px;
     height: 12px;
-    border-width: 1.5px;
   }
 }
