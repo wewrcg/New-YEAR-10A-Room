@@ -108,10 +108,24 @@ setInterval(updateNewYearTimer, 1000);
 const mainImage = document.getElementById('mainImage');
 const switchSceneBtn = document.getElementById('switchSceneBtn');
 
+// Укажите пути к картинкам со светлой и темной комнатой
+const lightOnImg = 'images/main-image.webp';  // Исходная картинка
+const lightOffImg = 'images/initial-image.webp';   // Картинка с выключенным/включенным светом
+
+let isSwitched = false; // Запоминаем текущее состояние
+
 if (switchSceneBtn && mainImage) {
   switchSceneBtn.addEventListener('click', () => {
-    // Укажите точное имя файла вашей второй комнаты в папке images
-    mainImage.src = 'images/initial-image.webp';
+    isSwitched = !isSwitched; // Меняем состояние на противоположное
+    
+    if (isSwitched) {
+      mainImage.src = lightOffImg;
+      switchSceneBtn.classList.add('active'); // Можно добавить подсветку венку
+    } else {
+      mainImage.src = lightOnImg;
+      switchSceneBtn.classList.remove('active');
+    }
   });
 }
+
 
