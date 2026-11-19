@@ -117,18 +117,20 @@ h1 {
 .target-object {
   position: absolute;
   z-index: 5;
-  width: 18px;               /* Размер на ПК оставлен без изменений */
+  width: 18px;
   height: 18px;
   transform: translate(-50%, -50%);
-  
-  background: rgba(0, 0, 0, 0.55); /* Черный фон с прозрачностью 55% */
+  background: rgba(0, 0, 0, 0.55);
   border: none;
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   padding: 0;
-  transition: transform 0.2s ease, background 0.2s ease;
+  outline: none;                    /* Убирает системную рамку фокуса браузера */
+  -webkit-tap-highlight-color: transparent; /* Убирает синюю вспышку при тапе на телефоне */
+  transition: transform 0.2s ease;  /* Убрали transition у background и box-shadow, чтобы не мигало */
 }
+
 
 /* При наведении кнопка становится чуть плотнее */
 .target-object:hover {
