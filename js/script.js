@@ -59,8 +59,9 @@ objectsData.forEach((item) => {
 function openFocus(btn, item) {
   sidebarTitle.textContent = item.title;
   sidebarText.textContent = item.desc;
-  sidebarImg.src = 'images/main-image.webp';
-  sidebarImg.style.transformOrigin = `${item.left}% ${item.top}%`;
+  
+  // Подставляем конкретную картинку объекта из массива objectsData
+  sidebarImg.src = 'images/' + item.img;
 
   btn.classList.add('active');
   activeButton = btn;
@@ -69,6 +70,7 @@ function openFocus(btn, item) {
   sidebar.classList.add('active');
   document.body.classList.add('no-scroll');
 }
+
 
 function closeFocus() {
   if (activeButton) {
