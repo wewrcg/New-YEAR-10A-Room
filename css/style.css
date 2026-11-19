@@ -283,10 +283,29 @@ h1 {
     justify-content: center;
   }
 
-  .scene-switch-btn {
-    width: 130px;
-    height: auto;
+ /* Убираем синюю подсветку при нажатии пальцем на телефоне */
+.scene-switch-btn {
+  width: 180px;
+  height: auto;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Эффект наведения срабатывает ТОЛЬКО на ПК с мышкой */
+@media (hover: hover) {
+  .scene-switch-btn:hover {
+    transform: scale(1.1) rotate(5deg);
   }
+}
+
+/* Приятный отклик в момент нажатия пальцем или мышкой */
+.scene-switch-btn:active {
+  transform: scale(0.92);
+}
+
 
   /* 3. Под венком — блок информации на всю ширину экрана */
   .info-box {
