@@ -111,7 +111,7 @@ const switchSceneBtn = document.getElementById('switchSceneBtn');
 if (switchSceneBtn && mainImage) {
   switchSceneBtn.addEventListener('click', () => {
     // Укажите точное имя файла вашей второй комнаты в папке images
-    mainImage.src = 'images/room2.png';
+    mainImage.src = 'images/initial-image.webp';
   });
 }
 
