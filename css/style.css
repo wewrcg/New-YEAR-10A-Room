@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   font-family: sans-serif;
   text-align: center;
@@ -190,7 +194,9 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: opacity 0.15s ease;
 }
+
 
 .sidebar-desc {
   background: #e0e0e0;
@@ -209,7 +215,16 @@ h1 {
   border: none;
   cursor: pointer;
   font-weight: bold;
+  opacity: 0;              /* Скрыт, пока сайдбар закрыт */
+  pointer-events: none;
+  transition: opacity 0.2s ease;
 }
+
+.sidebar.active .close-btn {
+  opacity: 1;              /* Появляется только при открытии сайдбара */
+  pointer-events: auto;
+}
+
 
 /* =========================================
    ТАЙМЕР ДО НОВОГО ГОДА
