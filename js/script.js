@@ -23,9 +23,9 @@ const objectsData = [
   { top: 42, left: 45, title: 'Новогодняя ёлка', desc: 'В лесу родилась ёлочка а кто её родил.', img: '12.png' },
   { top: 42, left: 55, title: 'Украшения', desc: 'Крутые украшения всякие', img: '13.png' },
   { top: 76, left: 23, title: 'ПК', desc: 'А где играть?.', img: '21.png' },
-  { top: 20, left: 50, title: 'Снеговик', desc: 'А он не растает?', img: '11.png' },
+  { top: 20, left: 60, title: 'Снеговик', desc: 'А он не растает?', img: '11.png' },
   { top: 30, left: 66, title: 'Полка Z', desc: 'Россия Путин Победа', img: '10.png' },
-  { top: 35, left: 73, title: 'Розовый монстр', desc: 'как ты', img: '9.png' },
+  { top: 35, left: 68, title: 'Розовый монстр', desc: 'Как ты', img: '9.png' },
   { top: 38, left: 84, title: 'Портрет Ёжика', desc: 'Картина с Ёжиком на правой стене.', img: '2.png' },
   { top: 42, left: 95, title: 'Голова зайца', desc: 'офигееет.', img: '1.png' },
   { top: 66, left: 13, title: 'Бас гитара', desc: 'шо это гитара.', img: '29.png' },
@@ -56,12 +56,11 @@ objectsData.forEach((item) => {
   scene.appendChild(btn);
 });
 
+
 function openFocus(btn, item) {
   sidebarTitle.textContent = item.title;
   sidebarText.textContent = item.desc;
-  
-  // Подставляем конкретную картинку объекта из массива objectsData
-  sidebarImg.src = 'images/' + item.img;
+  sidebarImg.src = 'images/' + item.img; // Важно: именно item.img!
 
   btn.classList.add('active');
   activeButton = btn;
@@ -70,6 +69,7 @@ function openFocus(btn, item) {
   sidebar.classList.add('active');
   document.body.classList.add('no-scroll');
 }
+
 
 
 function closeFocus() {
