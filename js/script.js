@@ -104,3 +104,14 @@ function updateNewYearTimer() {
 // Запускаем сразу и обновляем каждую секунду
 updateNewYearTimer();
 setInterval(updateNewYearTimer, 1000);
+
+const mainImage = document.getElementById('mainImage');
+const switchSceneBtn = document.getElementById('switchSceneBtn');
+
+if (switchSceneBtn && mainImage) {
+  switchSceneBtn.addEventListener('click', () => {
+    // Укажите точное имя файла вашей второй комнаты в папке images
+    mainImage.src = 'images/room2.png';
+  });
+}
+
