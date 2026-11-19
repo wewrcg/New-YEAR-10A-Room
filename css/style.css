@@ -283,35 +283,21 @@ h1 {
     justify-content: center;
   }
 
- /* Базовое состояние: жестко фиксируем 0 градусов и обычный масштаб */
 .scene-switch-btn {
-  width: 180px;
-  height: auto;
-  cursor: pointer;
-  transform: rotate(0deg) scale(1);
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
-  transition: transform 0.25s ease, filter 0.25s ease;
-}
+    width: 130px;
+    height: auto;
+    transform: rotate(0deg) scale(1);
+  }
 
-@media (hover: hover) {
+  /* Жестко запрещаем :hover на экранах уже 1100px */
   .scene-switch-btn:hover {
-    transform: rotate(5deg) scale(1.1);
+    transform: rotate(0deg) scale(1);
   }
+
+  .scene-switch-btn.active,
   .scene-switch-btn.active:hover {
-    transform: rotate(-10deg) scale(1.1);
+    transform: rotate(-10deg) scale(1);
   }
-}
-
-.scene-switch-btn.active {
-  filter: drop-shadow(0 0 15px rgba(255, 220, 100, 0.9));
-  transform: rotate(-10deg) scale(1);
-}
-
-.scene-switch-btn:active {
-  transform: scale(0.92);
-}
 
 
 
