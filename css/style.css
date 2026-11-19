@@ -9,7 +9,7 @@ body {
   text-align: center;
   
   /* Укажите здесь точное имя и расширение вашего фонового файла из папки images */
-  background: #0f172a url('../images/bg.webp') center/cover fixed no-repeat;
+  background: #0f172a;
 }
 
 
@@ -196,8 +196,8 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;             /* Отступ между комнатой и венком */
-  max-width: 960px;      /* Общая максимальная ширина блока */
+  gap: 30px;             /* Отступ между комнатой и венком */
+  max-width: 1100px;     /* Увеличили общую ширину, чтобы большой венок не сжимал комнату */
   width: 95%;
   margin: 0 auto;
 }
@@ -205,32 +205,34 @@ h1 {
 /* Корректируем вашу существующую сцену внутри flex-контейнера */
 .scene-wrapper .scene {
   margin: 0;
-  max-width: 800px;      /* Сохраняем вашу исходную ширину сцены */
+  max-width: 800px;      /* Комната сохраняет свой полный размер */
   width: 100%;
 }
 
-/* Стили для картинки-венка справа */
+/* Стили для большого венка справа */
 .scene-switch-btn {
-  width: 110px;          /* Размер венка */
+  width: 180px;          /* Сделали венок заметно больше (было 110px) */
   height: auto;
   cursor: pointer;
-  flex-shrink: 0;        /* Не сжимает венок */
+  flex-shrink: 0;        /* Запрещает сжимать венок */
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
 .scene-switch-btn:hover {
-  transform: scale(1.12) rotate(5deg);
+  transform: scale(1.1) rotate(5deg);
 }
 
 /* На мобильных экранах венок аккуратно переместится под комнату */
 @media (max-width: 768px) {
   .scene-wrapper {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
   }
   .scene-switch-btn {
-    width: 85px;
+    width: 130px;        /* Увеличенный размер и для телефонов тоже */
   }
+}
+
 }
 
