@@ -13,18 +13,27 @@
     <main class="container">
     <h1>Комната величайшего 10А</h1>
     
+    
     <!-- Обертка для центрирования сцены и кнопки справа -->
     <div class="scene-wrapper">
-      
-      <!-- Ваш существующий контейнер с основной картинкой (id="scene" сохранен для script.js) -->
-      <div class="scene" id="scene">
-        <img src="images/main-image.webp" alt="Центральное изображение" class="main-img" id="mainImage">
-      </div>
+  
+  <!-- 1. Левый квадратный блок с вашей картинкой -->
+  <div class="info-box">
+    <img src="images/info.png" alt="Информация">
+  </div>
 
-      <!-- Новая картинка справа (венок) -->
-      <img src="images/wreath.png" alt="Сменить комнату" class="scene-switch-btn" id="switchSceneBtn">
-      
-    </div>
+  <!-- 2. Центральная комната -->
+  <div class="scene" id="scene">
+    <img src="images/main-image.webp" alt="Центральное изображение" class="main-img" id="mainImage">
+  </div>
+
+  <!-- 3. Правый блок с венком -->
+  <div class="right-controls">
+    <img src="images/wreath.png" alt="Переключить свет" class="scene-switch-btn" id="switchSceneBtn" title="Включить / выключить свет">
+  </div>
+  
+</div>
+
   </main>
 
 
