@@ -9,15 +9,23 @@
 
   <header class="header">Шапка пупупу</header>
   
-  <main class="container">
+    <main class="container">
     <h1>Комната величайшего 10А</h1>
     
-    <!-- Контейнер с основной картинкой -->
-    <div class="scene" id="scene">
-  <img src="images/main-image.webp" alt="Центральное изображение" class="main-img">
-</div>
+    <!-- Обертка для центрирования сцены и кнопки справа -->
+    <div class="scene-wrapper">
+      
+      <!-- Ваш существующий контейнер с основной картинкой (id="scene" сохранен для script.js) -->
+      <div class="scene" id="scene">
+        <img src="images/main-image.webp" alt="Центральное изображение" class="main-img" id="mainImage">
+      </div>
 
+      <!-- Новая картинка справа (венок) -->
+      <img src="images/wreath.png" alt="Сменить комнату" class="scene-switch-btn" id="switchSceneBtn">
+      
+    </div>
   </main>
+
 
   <!-- ВСТАВЛЯТЬ ВОТ СЮДА (после </main>) -->
   <section class="new-year-section">
@@ -39,14 +47,6 @@
       <p id="sidebarText">Подробное описание объекта, которое появляется при клике.</p>
     </div>
   </aside>
-
-  <div class="gallery-container">
-  <!-- Центральная (основная) картинка -->
-  <img id="main-image" src="initial-image.webp" alt="Основная картинка">
-
-  <!-- Картинка-кнопка справа (венок) -->
-  <img id="switch-btn" src="wreath.png" alt="Сменить картинку">
-</div>
 
 
   <script src="js/script.js"></script>
