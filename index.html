@@ -65,26 +65,27 @@
 
 <style>
   #snow-canvas {
-    position: fixed;
+    position: absolute;  /* Было fixed — теперь снег не следует за прокруткой */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Снег не мешает кликать по кнопкам и ссылкам */
-    z-index: 9999;        /* Поверх остального контента (можно уменьшить, если нужен строго за текстом) */
+    pointer-events: none;
+    z-index: 9999;
   }
 </style>
+
 
 <script>
   const canvas = document.getElementById('snow-canvas');
   const ctx = canvas.getContext('2d');
 
   let width = canvas.width = window.innerWidth;
-  let height = canvas.height = window.innerHeight;
+  let height = canvas.height = document.documentElement.scrollHeight;
 
   window.addEventListener('resize', () => {
     width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
+    height = canvas.height = document.documentElement.scrollHeight;
   });
 
   // Количество снежинок (оптимально 50–100)
