@@ -283,28 +283,41 @@ h1 {
     justify-content: center;
   }
 
- /* Убираем синюю подсветку при нажатии пальцем на телефоне */
+ /* Базовое состояние: жестко фиксируем 0 градусов и обычный масштаб */
 .scene-switch-btn {
   width: 180px;
   height: auto;
   cursor: pointer;
+  transform: rotate(0deg) scale(1);
   -webkit-tap-highlight-color: transparent;
   user-select: none;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-/* Эффект наведения срабатывает ТОЛЬКО на ПК с мышкой */
+/* Эффект наведения работает ТОЛЬКО на устройствах с мышкой (ПК) */
 @media (hover: hover) {
   .scene-switch-btn:hover {
-    transform: scale(1.1) rotate(5deg);
+    transform: rotate(5deg) scale(1.1);
+  }
+  
+  /* Наведение на уже повернутый активный венок */
+  .scene-switch-btn.active:hover {
+    transform: rotate(-10deg) scale(1.1);
   }
 }
 
-/* Приятный отклик в момент нажатия пальцем или мышкой */
+/* Состояние при выключенном свете */
+.scene-switch-btn.active {
+  filter: drop-shadow(0 0 15px rgba(255, 220, 100, 0.9));
+  transform: rotate(-10deg) scale(1);
+}
+
+/* Легкое нажатие пальцем или мышкой */
 .scene-switch-btn:active {
   transform: scale(0.92);
 }
+
 
 
   /* 3. Под венком — блок информации на всю ширину экрана */
