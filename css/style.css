@@ -26,7 +26,7 @@ body.no-scroll {
   margin-top: 150px;       /* Место сверху под персонажа */
   
   /* Ваша фоновая картинка шапки */
-  background: rgba(25, 35, 50, 0.85) url('../images/header-bg.webp') center / cover no-repeat;
+  background: rgba(25, 35, 50, 0.85) url('../images/header-bg.png') center / cover no-repeat;
   
   display: flex;
   justify-content: center;
