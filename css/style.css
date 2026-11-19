@@ -44,6 +44,16 @@ body.no-scroll {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7); /* Тень, чтобы буквы хорошо читались на любом фоне */
 }
 
+.header-character {
+  position: absolute;
+  bottom: 100%;            /* Ставит нижний край картинки строго на верхнюю границу шапки */
+  left: 50%;
+  transform: translateX(-50%); /* Центрирует строго по горизонтали */
+  width: 340px;            /* Размер персонажа на ПК (можно поменять под себя) */
+  height: auto;
+  pointer-events: none;    /* Чтобы картинка не мешала кликам */
+  display: block;
+}
 
 h1 {
   margin: 30px 0;
