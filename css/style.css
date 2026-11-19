@@ -231,34 +231,41 @@ h1 {
   color: #e2e8f0;
 }
 
-/* Центральная сцена */
+/* Расширяем общий контейнер, чтобы вместить крупный инфо-блок, комнату и венок */
+.scene-wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 35px;
+  max-width: 1550px;     /* Даем больше места по бокам */
+  width: 96%;
+  margin: 0 auto;
+}
+
+/* Левый блок подстраивается под форму картинки и чуть ниже комнаты */
+.info-box {
+  justify-self: end;       /* Прижимает блок ближе к комнате */
+  height: 520px;           /* Высота чуть меньше центральной комнаты */
+  width: auto;             /* Ширина подстроится сама под пропорции картинки */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  background: transparent; /* Убирает лишние пустые поля по бокам */
+}
+
+.info-box img {
+  height: 100%;            /* Картинка занимает всю высоту блока */
+  width: auto;             /* Сохраняет свои родные пропорции без обрезки */
+  display: block;
+}
+
+/* Центральная комната */
 .scene-wrapper .scene {
   margin: 0;
-  max-width: 750px;        /* Оптимальная ширина комнаты */
+  max-width: 720px;        /* Чуть оптимизируем ширину, чтобы всё влезло в один экран */
   width: 100%;
 }
 
-/* Контейнер для венка справа */
-.right-controls {
-  justify-self: start;     /* Прижимает венок ближе к комнате */
-  display: flex;
-  align-items: center;
-}
-
-/* Венок справа */
-.scene-switch-btn {
-  width: 180px;
-  height: auto;
-  cursor: pointer;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
-  transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.scene-switch-btn:hover {
-  transform: scale(1.1) rotate(5deg);
-}
-
-/* Адаптация под планшеты и телефоны (выстраивает всё в один столбец) */
 @media (max-width: 1100px) {
   .scene-wrapper {
     grid-template-columns: 1fr;
@@ -266,26 +273,22 @@ h1 {
     gap: 20px;
   }
 
-/* Левый квадратный блок под изображение */
-.info-box {
-  justify-self: end;       /* Прижимает квадрат ближе к комнате */
-  width: 240px;
-  height: 240px;           /* Делает блок ровно квадратным */
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
+  .info-box {
+    justify-self: center;
+    height: auto;
+    width: auto;
+    max-width: 320px;
+  }
 
-.info-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;       /* Заполняет весь квадрат без пустых полос */
-  display: block;
-}
+  .info-box img {
+    width: 100%;
+    height: auto;
+  }
 
   .right-controls {
     justify-self: center;
   }
 }
+
 
 
