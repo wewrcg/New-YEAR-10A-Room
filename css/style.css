@@ -65,21 +65,22 @@ h1 {
    СЕТКА ДЛЯ КОМПЬЮТЕРА (ПК)
    ========================================= */
 
+/* Ограничиваем колонки через minmax(0, 1fr), чтобы большая картинка не ломала сетку */
 .scene-wrapper {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  gap: 35px;
+  gap: 30px;
   max-width: 1550px;
   width: 96%;
   margin: 0 auto;
 }
 
-/* Левый блок с информацией на ПК: крупный и строго по форме картинки */
+/* Левый блок с информацией */
 .info-box {
-  justify-self: end;       /* Прижимает блок ближе к комнате */
-  height: 520px;           /* Высота соразмерна комнате, но чуть меньше */
-  width: auto;             /* Ширина подстраивается под картинку (без квадратных полей) */
+  justify-self: end;
+  width: 100%;
+  max-width: 340px;        /* Жестко ограничиваем ширину, чтобы не выталкивала комнату */
   background: transparent;
   padding: 0;
   border: none;
@@ -89,8 +90,8 @@ h1 {
 }
 
 .info-box img {
-  height: 100%;
-  width: auto;
+  width: 100%;             /* Картинка ровно вписывается в 340px и сама подбирает высоту */
+  height: auto;
   display: block;
 }
 
@@ -102,6 +103,7 @@ h1 {
   width: 100%;
   margin: 0;
 }
+
 
 .main-img {
   display: block;
