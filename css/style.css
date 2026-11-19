@@ -190,3 +190,47 @@ h1 {
   font-weight: bold;
   letter-spacing: 2px;
 }
+
+/* Обертка ставит центральную сцену и венок в один ряд */
+.scene-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;             /* Отступ между комнатой и венком */
+  max-width: 960px;      /* Общая максимальная ширина блока */
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* Корректируем вашу существующую сцену внутри flex-контейнера */
+.scene-wrapper .scene {
+  margin: 0;
+  max-width: 800px;      /* Сохраняем вашу исходную ширину сцены */
+  width: 100%;
+}
+
+/* Стили для картинки-венка справа */
+.scene-switch-btn {
+  width: 110px;          /* Размер венка */
+  height: auto;
+  cursor: pointer;
+  flex-shrink: 0;        /* Не сжимает венок */
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  transition: transform 0.25s ease;
+}
+
+.scene-switch-btn:hover {
+  transform: scale(1.12) rotate(5deg);
+}
+
+/* На мобильных экранах венок аккуратно переместится под комнату */
+@media (max-width: 768px) {
+  .scene-wrapper {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .scene-switch-btn {
+    width: 85px;
+  }
+}
+
