@@ -65,46 +65,45 @@
 
 <style>
   #snow-canvas {
-    position: absolute;  /* Было fixed — теперь снег не следует за прокруткой */
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     pointer-events: none;
     z-index: 9999;
   }
 </style>
 
-
 <script>
   const canvas = document.getElementById('snow-canvas');
   const ctx = canvas.getContext('2d');
 
-  let width = canvas.width = window.innerWidth;
-  let height = canvas.height = document.documentElement.scrollHeight;
+  // Задаем внутренний размер холста строго равным полной ширине и высоте всей страницы
+  function resizeCanvas() {
+    canvas.width = document.documentElement.clientWidth;
+    canvas.height = document.documentElement.scrollHeight;
+  }
 
-  window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = document.documentElement.scrollHeight;
-  });
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+  window.addEventListener('load', resizeCanvas); // Пересчитываем высоту, когда прогрузятся все картинки
 
-  // Количество снежинок (оптимально 50–100)
-  const flakesCount = 80;
+  // Увеличили количество снежинок до 130, чтобы их хватило на всю длину страницы
+  const flakesCount = 130;
   const flakes = [];
 
   for (let i = 0; i < flakesCount; i++) {
     flakes.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      r: Math.random() * 3 + 1,      // Радиус снежинки (от 1 до 4 px)
-      speed: Math.random() * 1 + 0.5, // Скорость падения
-      wind: Math.random() * 0.5 - 0.25 // Легкое покачивание по горизонтали
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 3 + 1,
+      speed: Math.random() * 1 + 0.5,
+      wind: Math.random() * 0.5 - 0.25
     });
   }
 
   function drawSnow() {
-    ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)'; // Цвет и прозрачность снега
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
     ctx.beginPath();
 
     for (let flake of flakes) {
@@ -122,18 +121,18 @@
       flake.y += flake.speed;
       flake.x += flake.wind;
 
-      if (flake.y > height) {
+      if (flake.y > canvas.height) {
         flake.y = -5;
-        flake.x = Math.random() * width;
+        flake.x = Math.random() * canvas.width;
       }
     }
   }
 
-  // Учитываем настройки пользователя "меньше анимации"
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     drawSnow();
   }
 </script>
+
 
 </body>
 </html>
