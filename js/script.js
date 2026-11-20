@@ -6,38 +6,39 @@ const closeBtn = document.getElementById('closeBtn');
 const sidebarImg = document.getElementById('sidebarImg');
 const sidebarTitle = document.getElementById('sidebarTitle');
 const sidebarText = document.getElementById('sidebarText');
+const sidebarAuthor = document.getElementById('sidebarAuthor');
 
 const objectsData = [
-  { top: 43, left: 10, title: 'Flying V', desc: 'Белая гитара.', img: '28.png'},
-  { top: 27, left: 8, title: 'Гирлянда', desc: 'Голубая как я.', img: '19.png'},
-  { top: 43, left: 23, title: 'ТВ', desc: 'ШО откуда тут связь', img: '24.png' },
-  { top: 48, left: 29, title: 'Волк', desc: 'Ну погоди', img: '25.png' },
-  { top: 31, left: 38, title: 'Самокат', desc: 'Летит на самокате идиот', img: '22.png' },
-  { top: 49, left: 38, title: 'Аквариум', desc: 'Что стало с рыбкой?', img: '17.png' },
-  { top: 24, left: 43, title: 'UnFlying V', desc: 'Это на римском или англиском?', img: '20.png' },
-  { top: 76, left: 9, title: 'Трещина напольная', desc: 'трещина на полу.', img: '27.png' },
-  { top: 58, left: 21, title: 'Белый мишка', desc: 'Не внушает мне доверия.', img: '18.png' },
-  { top: 46, left: 15, title: 'Трещина настенная', desc: 'трещина на стене.', img: '26.png' },
-  { top: 60, left: 15, title: 'XBOX SERIES X', desc: 'Плейстейшн', img: '16.png' },
-  { top: 58, left: 32, title: 'Тумбы', desc: 'taph.', img: '23.png' },
-  { top: 42, left: 45, title: 'Новогодняя ёлка', desc: 'В лесу родилась ёлочка а кто её родил.', img: '12.png' },
-  { top: 42, left: 55, title: 'Украшения', desc: 'Крутые украшения всякие', img: '13.png' },
-  { top: 76, left: 23, title: 'ПК', desc: 'А где играть?.', img: '21.png' },
-  { top: 20, left: 60, title: 'Снеговик', desc: 'А он не растает?', img: '10.png' },
-  { top: 30, left: 66, title: 'Полка Z', desc: 'Россия Путин Победа', img: '11.png' },
-  { top: 35, left: 68, title: 'Розовый монстр', desc: 'Как ты', img: '9.png' },
-  { top: 38, left: 84, title: 'Портрет Ёжика', desc: 'Картина с Ёжиком на правой стене.', img: '2.png' },
-  { top: 42, left: 95, title: 'Голова зайца', desc: 'офигееет.', img: '1.png' },
-  { top: 66, left: 13, title: 'Бас гитара', desc: 'шо это гитара.', img: '29.png' },
-  { top: 52, left: 63, title: 'Подарки', desc: 'Во имя перпендикуляра', img: '8.png' },
-  { top: 58, left: 57, title: 'Кошка', desc: 'Zip zip', img: '14.png' },
-  { top: 70, left: 43, title: 'Диван', desc: 'Он мягок', img: '15.png' },
-  { top: 61, left: 47, title: 'Эльф', desc: 'Сидит в чулочках.', img: '15.png' },
-  { top: 68, left: 83, title: 'Камин', desc: 'С носочками!.', img: '3.png' },
-  { top: 58, left: 95, title: 'Боксёрская груша', desc: 'Висит груша нельзя скушать', img: '4.png' },
-  { top: 72, left: 71, title: 'Новогодний ковёр', desc: 'Круглый ковёр с ёлочками.', img: '5.png' },
-  { top: 80, left: 83, title: 'Лоток', desc: 'Стоит в левом углу на полу.', img: '6.png' },
-  { top: 76, left: 85, title: 'Паяльник', desc: 'лежит нафиг.', img: '7.png' },
+  { top: 43, left: 10, title: 'Flying V', desc: 'Белая гитара... Ноябрь же...', img: '28.png', author: 'Егор С.'},
+  { top: 27, left: 8, title: 'Гирлянда', desc: 'Голубая как я.', img: '19.png', author: 'Матвей Б.'},
+  { top: 43, left: 23, title: 'ТВ', desc: 'Почему я ни разу не видел в продаже синих телевизоров?', img: '24.png', author: 'Артём' },
+  { top: 48, left: 29, title: 'Волк', desc: 'Ну погоди!', img: '25.png', author: 'Иван' },
+  { top: 31, left: 38, title: 'Самокат', desc: 'Как он смог пробить такую идеальную дыру на такой высоте?', img: '22.png', author: 'Егор Ш.' },
+  { top: 49, left: 38, title: 'Аквариум', desc: 'А рыбки?', img: '17.png', author: 'Наталья' },
+  { top: 24, left: 43, title: 'UnFlying V', desc: 'Это на римском или английском?', img: '20.png', author: 'Ярослав' },
+  { top: 76, left: 9, title: 'Трещина напольная', desc: 'Круто, трещина на линолиуме.', img: '27.png', author: 'Виктория' },
+  { top: 58, left: 21, title: 'Белый мишка', desc: 'Это и есть медведь из 2026?', img: '18.png', author: 'Евгения' },
+  { top: 46, left: 15, title: 'Трещина настенная', desc: 'Ещё часть трещины скрыта за тумбой.', img: '26.png', author: 'Ольга Во.' },
+  { top: 60, left: 15, title: 'XBOX SERIES X', desc: 'Плейстейшн.', img: '16.png', author: 'Данил' },
+  { top: 58, left: 32, title: 'Тумба', desc: 'Открыта для диалога.', img: '23.png', author: 'Александра' },
+  { top: 42, left: 45, title: 'Новогодняя ёлка', desc: 'В лесу родилась ёлочка а кто её родил?', img: '12.png', author: 'ДЕНИС ШКОДА' },
+  { top: 42, left: 55, title: 'Украшения', desc: 'Крутые украшения всякие, жаль, что мне пришлось отказаться от своей "звезды"...', img: '13.png', author: 'Антон' },
+  { top: 76, left: 23, title: 'ПК', desc: 'А где играть?.', img: '21.png', author: 'Вениамин' },
+  { top: 20, left: 60, title: 'Снеговик', desc: 'А он не растает?', img: '10.png', author: 'Полина' },
+  { top: 30, left: 66, title: 'Полка Z', desc: 'Россия Путин Победа.', img: '11.png', author: 'Дарья Шо.' },
+  { top: 35, left: 68, title: 'Розовый монстр', desc: 'Как ты!', img: '9.png', author: 'Ника' },
+  { top: 38, left: 84, title: 'Портрет Ёжика', desc: 'Символично, что ёжик будучи розовым висит рядом с розовым монстром.', img: '2.png', author: 'Денис З.' },
+  { top: 42, left: 95, title: 'Голова зайца', desc: 'Просто зачем..?', img: '1.png', author: 'Ольга Ва.' },
+  { top: 66, left: 13, title: 'Бас гитара', desc: 'Очень близкая к другой гитаре гитара, ну хоть не палитра.', img: '29.png', author: 'Ульяна' },
+  { top: 52, left: 63, title: 'Подарки', desc: 'Ну хотя бы так...', img: '8.png', author: 'Дмитрий' },
+  { top: 58, left: 57, title: 'Белая кошка', desc: 'Я назвал её R2-D2', img: '14.png', author: 'Маргарита' },
+  { top: 70, left: 43, title: 'Диван', desc: 'Он мягок, НО Я МЯГЧЕ!', img: '15.png', author: 'Екатерина' },
+  { top: 61, left: 47, title: 'Эльф', desc: 'Не знал, что они носят гольфы.', img: '15.png', author: 'Ева' },
+  { top: 68, left: 83, title: 'Камин', desc: 'С носочками! Но без гномов, не зря камин горит.', img: '3.png', author: 'Дарья Ша.' },
+  { top: 58, left: 95, title: 'Боксёрская груша', desc: 'Эльф занимается спортом?', img: '4.png', author: 'Алексей' },
+  { top: 72, left: 71, title: 'Новогодний ковёр', desc: 'Ковёр. Спасибо, что не на стене.', img: '5.png', author: 'Александр' },
+  { top: 80, left: 83, title: 'Лоток', desc: 'Стоит в левом углу на полу. А кто вам сказал где здесь право, а где лево?', img: '6.png', author: 'Евгений' },
+  { top: 76, left: 85, title: 'Паяльник', desc: '😨😨😨😨😨😨😨😨', img: '7.png', author: 'Семён' },
 ];
 
 let activeButton = null;
@@ -60,6 +61,16 @@ objectsData.forEach((item) => {
 function openFocus(btn, item) {
   sidebarTitle.textContent = item.title;
   sidebarText.textContent = item.desc;
+
+  if (item.author) {
+    sidebarAuthor.textContent = '💡 Придумал: ' + item.author;
+    sidebarAuthor.style.display = 'inline-block';
+  } else {
+    sidebarAuthor.style.display = 'none';
+  }
+
+  // дальше ваш старый код загрузки картинки...
+
 
   // Прячем картинку, пока новая не прогрузится (чтобы не мелькала старая)
   sidebarImg.style.opacity = '0';
