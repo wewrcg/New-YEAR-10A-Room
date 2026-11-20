@@ -56,10 +56,15 @@ body.no-scroll {
 }
 
 h1 {
+  font-family: "Mountains of Christmas", cursive;
+  font-weight: 700;
+  font-size: 48px;
+  letter-spacing: 2px;
   margin: 30px 0;
   color: #ffffff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
+
 
 /* =========================================
    СЕТКА ДЛЯ КОМПЬЮТЕРА (ПК)
@@ -289,8 +294,10 @@ h1 {
 }
 
 .new-year-section h2 {
-  font-size: 42px;
-  font-weight: normal;
+  font-family: "Mountains of Christmas", cursive;
+  font-weight: 700;
+  font-size: 46px;
+  letter-spacing: 1px;
   margin-bottom: 15px;
 }
 
