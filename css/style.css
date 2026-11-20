@@ -281,31 +281,53 @@ h1 {
    ТАЙМЕР ДО НОВОГО ГОДА
    ========================================= */
 
+/* =========================================
+   ТАЙМЕР ДО НОВОГО ГОДА
+   ========================================= */
+
 .new-year-section {
   width: 100%;
-  min-height: 300px;
-  background: rgba(211, 211, 211, 0.9);
-  padding: 60px 20px;
+  background: #67737c; /* Серый фон с вашего макета */
+  padding: 40px 20px;
   margin-top: 60px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.ny-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  max-width: 1000px;
+}
+
+.ny-clock {
+  width: 220px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.ny-content {
+  text-align: left;
 }
 
 .new-year-section h2 {
   font-family: "Mountains of Christmas", cursive;
   font-weight: 400;
-  font-size: 46px;
-  margin-bottom: 15px;
+  font-size: 54px;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
-
 
 .timer {
-  font-size: 56px;
+  font-size: 44px;
   font-weight: bold;
+  color: #f4b43a; /* Золотой акцент в цвет ободка часов */
   letter-spacing: 2px;
 }
+
 
 /* =========================================
    АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ И ПЛАНШЕТОВ
@@ -372,13 +394,27 @@ h1 {
     height: auto;
   }
 
+  .ny-banner {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .ny-clock {
+    width: 150px;
+  }
+
+  .ny-content {
+    text-align: center;
+  }
+
   .new-year-section h2 {
-    font-size: 28px;
+    font-size: 36px;
   }
 
   .timer {
-    font-size: 34px;
+    font-size: 28px;
   }
+
   
   .target-object {
     width: 12px;
