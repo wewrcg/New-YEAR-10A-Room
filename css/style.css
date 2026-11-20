@@ -281,52 +281,38 @@ h1 {
    ТАЙМЕР ДО НОВОГО ГОДА
    ========================================= */
 
-/* =========================================
-   ТАЙМЕР ДО НОВОГО ГОДА
-   ========================================= */
-
 .new-year-section {
   width: 100%;
-  background: #67737c; /* Серый фон с вашего макета */
-  padding: 40px 20px;
   margin-top: 60px;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.ny-banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 35px;
-  max-width: 1000px;
+.ny-banner-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* Можете поставить 100%, если баннер должен быть во всю ширину экрана */
 }
 
-.ny-clock {
-  width: 220px;
+.ny-banner-img {
+  width: 100%;
   height: auto;
-  flex-shrink: 0;
-}
-
-.ny-content {
-  text-align: left;
-}
-
-.new-year-section h2 {
-  font-family: "Mountains of Christmas", cursive;
-  font-weight: 400;
-  font-size: 54px;
-  color: #ffffff;
-  margin-bottom: 10px;
+  display: block;
 }
 
 .timer {
-  font-size: 44px;
+  position: absolute;
+  /* Координаты места под надписью "Until NEW 2027 Year:" — подправьте под свой макет */
+  top: 62%;
+  left: 38%;
+  
+  font-size: clamp(18px, 3vw, 44px); /* Автоматически уменьшается на телефоне */
   font-weight: bold;
-  color: #f4b43a; /* Золотой акцент в цвет ободка часов */
+  color: #FFFFFF;
   letter-spacing: 2px;
+  white-space: nowrap;
 }
+
 
 
 /* =========================================
@@ -394,23 +380,7 @@ h1 {
     height: auto;
   }
 
-  .ny-banner {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .ny-clock {
-    width: 150px;
-  }
-
-  .ny-content {
-    text-align: center;
-  }
-
-  .new-year-section h2 {
-    font-size: 36px;
-  }
-
+ 
   .timer {
     font-size: 28px;
   }
