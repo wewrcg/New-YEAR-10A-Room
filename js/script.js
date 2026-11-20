@@ -63,7 +63,7 @@ function openFocus(btn, item) {
   sidebarText.textContent = item.desc;
 
   if (item.author) {
-    sidebarAuthor.textContent = '💡 Придумал: ' + item.author;
+    sidebarAuthor.textContent = '💡 Придумал(а): ' + item.author;
     sidebarAuthor.style.display = 'inline-block';
   } else {
     sidebarAuthor.style.display = 'none';
