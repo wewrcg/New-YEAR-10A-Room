@@ -295,11 +295,11 @@ h1 {
 
 .new-year-section h2 {
   font-family: "Mountains of Christmas", cursive;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 46px;
-  letter-spacing: 1px;
   margin-bottom: 15px;
 }
+
 
 .timer {
   font-size: 56px;
