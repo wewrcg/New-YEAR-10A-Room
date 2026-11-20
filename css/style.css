@@ -280,6 +280,30 @@ h1 {
   pointer-events: auto;
 }
 
+.sidebar-desc {
+  background: #e0e0e0;
+  padding: 15px;
+  min-height: 200px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-desc p {
+  margin-top: 8px;
+  flex-grow: 1; /* Толкает имя автора в самый низ блока */
+}
+
+.sidebar-author {
+  margin-top: 15px;
+  align-self: flex-start;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
 
 /* =========================================
    ТАЙМЕР ДО НОВОГО ГОДА
