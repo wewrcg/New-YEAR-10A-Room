@@ -173,7 +173,7 @@ function updateClockHands() {
   lastSeconds = seconds;
 
   const secDeg = (fullRotations * 60 + seconds) * 6;
-  const minDeg = minutes * 6 + seconds * 0.1;
+  const minDeg = minutes * 6;
   const hourDeg = hours * 30 + minutes * 0.5;
 
   if (secondHand) secondHand.style.transform = `rotate(${secDeg}deg)`;
