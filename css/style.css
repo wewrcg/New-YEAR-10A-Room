@@ -6,17 +6,16 @@
 
 html {
   scrollbar-gutter: stable;
-  max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
   font-family: sans-serif;
   text-align: center;
   background: #0f172a;
-  max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
+
 
 body.no-scroll {
   overflow: hidden;
