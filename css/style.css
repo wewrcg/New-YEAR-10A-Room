@@ -352,9 +352,6 @@ h1 {
   transform: translate(-50%, -50%);
   pointer-events: none;
 
-  /* Временная подсказка для идеальной подгонки — потом удалите эти 2 строки: */
-  border: 2px solid red;
-  border-radius: 50%;
 }
 
 
