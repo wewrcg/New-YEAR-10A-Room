@@ -153,5 +153,36 @@ window.addEventListener('load', () => {
   });
 });
 
+const hourHand = document.getElementById('hourHand');
+const minuteHand = document.getElementById('minuteHand');
+const secondHand = document.getElementById('secondHand');
+
+let lastSeconds = null;
+let fullRotations = 0;
+
+function updateClockHands() {
+  const now = new Date();
+  const seconds = now.getSeconds();
+  const minutes = now.getMinutes();
+  const hours = now.getHours() % 12;
+
+  // Чтобы секундная стрелка на 0-й секунде не крутилась назад через весь циферблат
+  if (lastSeconds !== null && seconds < lastSeconds) {
+    fullRotations++;
+  }
+  lastSeconds = seconds;
+
+  const secDeg = (fullRotations * 60 + seconds) * 6;
+  const minDeg = minutes * 6 + seconds * 0.1;
+  const hourDeg = hours * 30 + minutes * 0.5;
+
+  if (secondHand) secondHand.style.transform = `rotate(${secDeg}deg)`;
+  if (minuteHand) minuteHand.style.transform = `rotate(${minDeg}deg)`;
+  if (hourHand) hourHand.style.transform = `rotate(${hourDeg}deg)`;
+}
+
+updateClockHands();
+setInterval(updateClockHands, 1000);
+
 
 
